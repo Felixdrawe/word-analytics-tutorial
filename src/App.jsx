@@ -1,6 +1,6 @@
-import Header from './Header.jsx';
-import Container from './Container.jsx';
-import Footer from './Footer.jsx';
+import Header from './components/layout/Header';
+import Container from './components/layout/Container';
+import Footer from './components/layout/Footer';
 
 function App() {
   return (

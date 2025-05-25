@@ -1,13 +1,18 @@
-import Textarea from './Textarea';
-import Stats from './Stats';
+import Textarea from '../form/Textarea';
+import Stats from '../stats/Stats';
 import { useState } from 'react';
+import { BLUESKY_MAX_CHARS, THREADS_MAX_CHARS } from '../../lib/constants';
 
 export default function Container() {
   const [text, setText] = useState('');
   const [isWarningText, setIsWarningText] = useState(false);
 
-  const numberOfCharacters = text.length;
-  const numberOfWords = text.trim().split(/\s+/).filter(Boolean).length;
+  const stats = {
+    numberOfCharacters: text.length,
+    numberOfWords: text.trim().split(/\s+/).filter(Boolean).length,
+    blueskyCharactersLeft: BLUESKY_MAX_CHARS - text.length,
+    threadsCharactersLeft: THREADS_MAX_CHARS - text.length,
+  };
 
   const handleTextChange = (e) => {
     let newText = e.target.value;
@@ -28,7 +33,7 @@ export default function Container() {
   return (
     <main className="container">
       <Textarea text={text} onTextChange={handleTextChange} isWarningText={isWarningText} />
-      <Stats numberOfWords={numberOfWords} numberOfCharacters={numberOfCharacters} />
+      <Stats stats={stats} />
     </main>
   );
 }
