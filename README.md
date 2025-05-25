@@ -6,6 +6,8 @@
 
 A modern React application for real-time word and character analysis, built with Vite.
 
+![Word Analytics Screenshot](public/Screenshot%202025-05-25%20at%2016.20.14.png)
+
 ## Features
 
 - 🚦 **Live Word and Character Count:** Instantly displays the number of words and characters as you type.
