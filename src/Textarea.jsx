@@ -5,6 +5,12 @@ export default function Textarea() {
   const [text, setText] = useState('');
   const [isWarningText, setIsWarningText] = useState(false);
 
+  const numberOfCharacters = text.length;
+  console.log(`Text length: ${numberOfCharacters}`);
+  const numberOfWords = text.trim().split(/\s+/).filter(Boolean).length;
+  console.log(`Word count: ${numberOfWords}`);
+  // Log the text content to the console
+
   const handleChange = (e) => {
     let newText = e.target.value;
     if (newText.includes('<script>')) {
