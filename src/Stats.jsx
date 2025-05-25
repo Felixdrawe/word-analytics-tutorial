@@ -1,8 +1,7 @@
-export default function Stats() {
-  // Define stats data in a single array
+export default function Stats({ numberOfWords, numberOfCharacters }) {
   const statsData = [
-    { label: 'Words', value: 0 },
-    { label: 'Characters', value: 0 },
+    { label: 'Words', value: numberOfWords },
+    { label: 'Characters', value: numberOfCharacters },
     { label: 'Instagram', value: 280 },
     { label: 'Facebook', value: 2200 },
   ];
